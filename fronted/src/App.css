@@ -1,0 +1,185 @@
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: url("/public/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.landingPageContainer nav {
+  padding-inline: 1.2rem;
+  padding-block: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* .landingPageContainer nav h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+} */
+
+.landingPageContainer nav .navlist {
+  display: flex;
+  gap: 1.6rem;
+  cursor: pointer;
+
+}
+
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  height: 80vh;
+  align-items: center;
+}
+
+.landingMainContainer>div:nth-child(1) {
+  font-size: 2.2rem;
+}
+
+.landingMainContainer>div:nth-child(1) div[role='button'] {
+  background: #D97500;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: 1.9rem;
+}
+
+.landingMainContainer>div:nth-child(1) div[role='button'] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.landingMainContainer>div:nth-child(2) img {
+  height: 70vh;
+  width: auto;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+  text-align: center;
+
+}
+.meetContainer {
+  display: flex;
+  padding-inline: 20px;
+  height: 80vh;
+  gap: 10vw;
+  justify-content: center;
+}
+
+
+
+.leftPanel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.rightPanel {
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel > img {
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+}
+
+ .para:hover{
+color: chartreuse !important;
+transition: 0.2s;
+
+}
+.sty:hover{
+  color: rgb(0, 255, 68) !important;
+}
+
+.navHeader h2::first-letter{
+color: rgb(223, 25, 91);
+}
+
+/* .navHeader h2{
+  font-size: 2.5rem !important;
+} */
+
+.navHeader {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+
+.navHeader {
+    padding: 1px 0;    /* ↓ padding कमी केले */
+    margin-top: 0;      /* ↓ top margin हटवले */
+    text-align: center;
+}
+
+.runBorder {
+    position: relative;
+    display: inline-block;
+    padding:6px 20px; /* ↓ top-bottom padding कमी */
+    margin: 0;         /* margin remove */
+    color: #fff;
+    font-size: 30px;   /* size थोडा adjust केला */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Static Border */
+.runBorder::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    border: 2px solid #444;
+    z-index: -1;
+}
+
+/* Running light */
+.runBorder::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 5px;
+    background: #00eaff;
+    top: -1px;
+    left: -80px;
+    border-radius: 4px;
+    animation: runLight 2s linear infinite;
+}
+
+/* Animation */
+@keyframes runLight {
+    0% {
+        top: -2px;
+        left: -80px;
+    }
+    25% {
+        top: -2px;
+        left: calc(100% - 2px);
+    }
+    50% {
+        top: calc(100% - 2px);
+        left: calc(100% - 2px);
+    }
+    75% {
+        top: calc(100% - 2px);
+        left: -80px;
+    }
+    100% {
+        top: -2px;
+        left: -80px;
+    }
+}
