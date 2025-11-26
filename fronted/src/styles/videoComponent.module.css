@@ -168,6 +168,7 @@
 
 /* Mobile Portrait */
 
+  @media screen and (max-width: 600px) {
   .chatRoom {
     position: absolute;
     right: 0;
@@ -177,24 +178,22 @@
     bottom: auto;    
     border-radius: 0; 
   }
-
   .conferenceView {
-    width: calc(100% - 45vw);
-    margin-top: 10vh;
-    height: calc(100vh - 20vh);
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 100%;
+    margin-top: 2vh;
+    height: 52vh;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
-
   .buttonContainers {
-    height: 10vh;
+    height: 8vh;
     gap: 6vw;
   }
-
   .meetUserVideo {
     height: 14vh;
-    bottom: 12vh;
+    bottom: 10vh;
     left: 2vw;
   }
+}
 
 
 
