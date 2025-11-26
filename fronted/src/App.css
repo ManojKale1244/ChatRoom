@@ -183,3 +183,119 @@ color: rgb(223, 25, 91);
         left: -80px;
     }
 }
+
+/* ============================================================
+   ===============   RESPONSIVE DESIGN   =======================
+   ============================================================ */
+
+/* ----------- Large Tablets (max-width: 1024px) ----------- */
+@media (max-width: 1024px) {
+
+  .landingMainContainer {
+    padding-inline: 2rem;
+    height: auto;
+    flex-direction: row;
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.8rem;
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    height: 55vh;
+  }
+
+  .navlist {
+    gap: 1rem !important;
+  }
+}
+
+
+/* ----------- Tablets (max-width: 768px) ----------- */
+@media (max-width: 768px) {
+
+  nav {
+    padding-inline: 1rem !important;
+  }
+
+  .navlist {
+    gap: 0.8rem !important;
+  }
+
+  .landingMainContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-inline: 1rem;
+    height: auto;
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    height: 38vh;
+    margin-bottom: 20px;
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.6rem;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role='button'] {
+    margin-inline: auto;
+  }
+}
+
+
+/* ----------- Mobile (max-width: 576px) ----------- */
+@media (max-width: 576px) {
+
+  .navHeader h2 {
+    font-size: 22px !important;
+  }
+
+  .runBorder {
+    padding: 4px 14px !important;
+    font-size: 22px;
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.4rem;
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    height: 32vh;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role='button'] a {
+    font-size: 1.3rem;
+  }
+
+  .para {
+    font-size: 1rem !important;
+  }
+
+  .navlist p,
+  .navlist div p {
+    font-size: 14px;
+  }
+}
+
+
+/* ----------- Small Mobile (max-width: 420px) ----------- */
+@media (max-width: 420px) {
+
+  .navlist {
+    gap: 0.5rem !important;
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.2rem;
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    height: 28vh;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role='button'] a {
+    font-size: 1.1rem;
+  }
+}
+
