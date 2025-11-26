@@ -1,202 +1,172 @@
-/* ============================
-      MAIN MEET CONTAINER
-============================ */
+/* ======================== */
+/*     Main Meet Layout     */
+/* ======================== */
+
 .meetVideoContainer {
   position: relative;
   height: 100vh;
-  background: rgb(1, 4, 48);
+  width: 100vw;
+  background: #010430;
   overflow: hidden;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ============================
-        LOCAL USER VIDEO
-============================ */
+/* ======================== */
+/*    Local User Video      */
+/* ======================== */
 .meetUserVideo {
   position: absolute;
-  bottom: 10vh;
-  height: 25vh;
+  bottom: 12vh;
+  left: 1vw;
+  height: 18vh;
   width: auto;
-  left: 1rem;
   border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-.meetUserVideo:hover {
-  transform: scale(1.1);
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  z-index: 20;
 }
 
-/* ============================
-        BUTTONS
-============================ */
-.buttonContainers {
+/* ======================== */
+/*       Chat Sidebar       */
+/* ======================== */
+.chatRoom {
   position: absolute;
-  width: 100%;
-  bottom: 1rem;
-  text-align: center;
-}
-.buttonContainers svg {
-  font-size: clamp(2rem, 3vw, 3rem);
+  right: 0;
+  top: 0;
+  width: 28vw;
+  height: 90%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  overflow-y: auto;
+  color: white;
+  z-index: 10;
 }
 
-/* ============================
-     CONFERENCE VIDEO GRID
-============================ */
-.conferenceView {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  padding: 10px;
+.chatContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chattingDisplay {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.chattingArea {
+  margin-top: 10px;
+  display: flex;
   gap: 10px;
+}
+
+/* ======================== */
+/*       Video Grid         */
+/* ======================== */
+.conferenceView {
+  margin-top: 10vh;
+  width: calc(100% - 28vw); /* Adjust width according to chat */
+  height: calc(100vh - 22vh);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 10px;
+  transition: all 0.3s ease;
 }
 
 .conferenceView video {
   width: 100%;
-  height: 35vh;
-  border-radius: 10px;
+  height: 100%;
+  border-radius: 15px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  background: black;
 }
 
-/* Zoom effect */
-.conferenceView video:hover {
-  transform: scale(1.05);
-}
-
-/* ============================
-          CHAT ROOM
-============================ */
-.chatRoom {
-  position: absolute;
-  top: 5vh;
-  right: 0;
-  height: 90vh;
-  background: white;
-  border-radius: 10px;
-  width: 28vw;
-  padding-inline: 20px;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease;
-}
-
-.chatContainer {
-  position: relative;
-  flex: 1;
-}
-
-.chattingArea {
+/* ======================== */
+/*      Action Buttons      */
+/* ======================== */
+.buttonContainers {
   position: absolute;
   bottom: 0;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 15;
 }
 
-/* ============================
-          LAPTOP (<=1300)
-============================ */
-@media (max-width: 1300px) {
+/* ======================== */
+/*    RESPONSIVE STYLES     */
+/* ======================== */
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
   .chatRoom {
-    width: 32vw;
+    width: 35vw;
   }
-
-  .conferenceView video {
-    height: 32vh;
-  }
-}
-
-/* ============================
-           TABLET (<=1024)
-============================ */
-@media (max-width: 1024px) {
-  .chatRoom {
-    width: 38vw;
-  }
-
   .conferenceView {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    width: calc(100% - 35vw);
   }
-
-  .conferenceView video {
-    height: 30vh;
-  }
-}
-
-/* ============================
-       MOBILE LANDSCAPE
-============================ */
-@media (max-width: 900px) and (orientation: landscape) {
-  .conferenceView video {
-    height: 28vh;
-  }
-}
-
-/* ============================
-          MOBILE (<=768)
-============================ */
-@media (max-width: 768px) {
-
   .meetUserVideo {
-    height: 18vh;
-    bottom: 14vh;
-  }
-
-  /* Full width grid */
-  .conferenceView {
-    grid-template-columns: repeat(auto-fit, minmax(45vw, 1fr));
-  }
-
-  .conferenceView video {
-    height: 28vh;
-  }
-
-  /* Chat panel becomes bottom sheet */
-  .chatRoom {
-    width: 100%;
-    height: 42vh;
-    bottom: 0;
-    top: auto;
-    border-radius: 15px 15px 0 0;
-    padding-bottom: 50px;
+    height: 20vh;
+    bottom: 15vh;
   }
 }
 
-/* ============================
-   SMALL MOBILE (<=480)
-============================ */
-@media (max-width: 480px) {
-
-  .buttonContainers svg {
-    font-size: 2.2rem;
+/* Mobile Landscape */
+@media screen and (max-width: 768px) {
+  .chatRoom {
+    width: 50vw;
   }
-
+  .conferenceView {
+    width: calc(100% - 50vw);
+  }
+  .buttonContainers {
+    gap: 5vw;
+  }
   .meetUserVideo {
     height: 16vh;
   }
+}
 
-  .conferenceView {
-    grid-template-columns: 1fr;
-  }
-
-  .conferenceView video {
-    height: 26vh;
-  }
-
+/* Mobile Portrait */
+@media screen and (max-width: 600px) {
   .chatRoom {
-    height: 45vh;
+    width: 100%;
+    height: 45%;
+    bottom: 0;
+    top: auto;
+    border-radius: 20px 20px 0 0;
+  }
+  .conferenceView {
+    width: 100%;
+    margin-top: 2vh;
+    height: 52vh;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .buttonContainers {
+    height: 8vh;
+    gap: 6vw;
+  }
+  .meetUserVideo {
+    height: 14vh;
+    bottom: 10vh;
+    left: 2vw;
   }
 }
 
-/* ============================
-     VERY SMALL DEVICES
-============================ */
-@media (max-width: 360px) {
-
+/* Small Phones */
+@media screen and (max-width: 400px) {
   .meetUserVideo {
-    height: 14vh;
+    height: 12vh;
   }
-
-  .buttonContainers svg {
-    font-size: 1.8rem;
-  }
-
-  .conferenceView video {
-    height: 22vh;
+  .conferenceView {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
