@@ -1,8 +1,8 @@
+let IS_PROD = true;
+const server = IS_PROD ?
+    "https://backend-yni7.onrender.com" :
 
-const server = {
-   dev: "https://backend-yni7.onrender.com",
+    "http://localhost:8000"
 
-  prod: "http://localhost:8000"
 
-}
 export default server;
