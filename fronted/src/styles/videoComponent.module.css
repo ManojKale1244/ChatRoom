@@ -1,61 +1,202 @@
+/* ============================
+      MAIN MEET CONTAINER
+============================ */
 .meetVideoContainer {
-    position: relative;
-    height: 100vh;
-    background: rgb(1, 4, 48);
+  position: relative;
+  height: 100vh;
+  background: rgb(1, 4, 48);
+  overflow: hidden;
+  padding: 1rem;
 }
 
+/* ============================
+        LOCAL USER VIDEO
+============================ */
 .meetUserVideo {
-    position: absolute;
-    bottom: 10vh;
-    height: 20vh;
-    width: auto;
-    left: 0;
-    border-radius: 20px;
+  position: absolute;
+  bottom: 10vh;
+  height: 25vh;
+  width: auto;
+  left: 1rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+.meetUserVideo:hover {
+  transform: scale(1.1);
 }
 
+/* ============================
+        BUTTONS
+============================ */
 .buttonContainers {
-    position: absolute;
-    width: 100vw;
-    bottom: 0;
-    text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 1rem;
+  text-align: center;
 }
-
 .buttonContainers svg {
-    font-size: 3rem;
+  font-size: clamp(2rem, 3vw, 3rem);
 }
 
-.conferenceView { 
-
-    display: flex;
-    
-    padding: 10px;
-    gap: 10px;
+/* ============================
+     CONFERENCE VIDEO GRID
+============================ */
+.conferenceView {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding: 10px;
+  gap: 10px;
 }
 
-.conferenceView  video {
-    width: 40vw;
-    height: 20vh;
-    min-width: 30vw;
-    border-radius: 10px;
+.conferenceView video {
+  width: 100%;
+  height: 35vh;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
+/* Zoom effect */
+.conferenceView video:hover {
+  transform: scale(1.05);
+}
+
+/* ============================
+          CHAT ROOM
+============================ */
 .chatRoom {
-    position: absolute;
-    height: 90vh;
-    right: 0;
-    background: white;
-    border-radius: 10px;
-    width: 30vw;
-    padding-inline: 20px;
+  position: absolute;
+  top: 5vh;
+  right: 0;
+  height: 90vh;
+  background: white;
+  border-radius: 10px;
+  width: 28vw;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
 }
 
 .chatContainer {
-    position: relative;
-    height: 100%;
+  position: relative;
+  flex: 1;
 }
 
-
 .chattingArea {
-    position: absolute;
+  position: absolute;
+  bottom: 0;
+}
+
+/* ============================
+          LAPTOP (<=1300)
+============================ */
+@media (max-width: 1300px) {
+  .chatRoom {
+    width: 32vw;
+  }
+
+  .conferenceView video {
+    height: 32vh;
+  }
+}
+
+/* ============================
+           TABLET (<=1024)
+============================ */
+@media (max-width: 1024px) {
+  .chatRoom {
+    width: 38vw;
+  }
+
+  .conferenceView {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .conferenceView video {
+    height: 30vh;
+  }
+}
+
+/* ============================
+       MOBILE LANDSCAPE
+============================ */
+@media (max-width: 900px) and (orientation: landscape) {
+  .conferenceView video {
+    height: 28vh;
+  }
+}
+
+/* ============================
+          MOBILE (<=768)
+============================ */
+@media (max-width: 768px) {
+
+  .meetUserVideo {
+    height: 18vh;
+    bottom: 14vh;
+  }
+
+  /* Full width grid */
+  .conferenceView {
+    grid-template-columns: repeat(auto-fit, minmax(45vw, 1fr));
+  }
+
+  .conferenceView video {
+    height: 28vh;
+  }
+
+  /* Chat panel becomes bottom sheet */
+  .chatRoom {
+    width: 100%;
+    height: 42vh;
     bottom: 0;
+    top: auto;
+    border-radius: 15px 15px 0 0;
+    padding-bottom: 50px;
+  }
+}
+
+/* ============================
+   SMALL MOBILE (<=480)
+============================ */
+@media (max-width: 480px) {
+
+  .buttonContainers svg {
+    font-size: 2.2rem;
+  }
+
+  .meetUserVideo {
+    height: 16vh;
+  }
+
+  .conferenceView {
+    grid-template-columns: 1fr;
+  }
+
+  .conferenceView video {
+    height: 26vh;
+  }
+
+  .chatRoom {
+    height: 45vh;
+  }
+}
+
+/* ============================
+     VERY SMALL DEVICES
+============================ */
+@media (max-width: 360px) {
+
+  .meetUserVideo {
+    height: 14vh;
+  }
+
+  .buttonContainers svg {
+    font-size: 1.8rem;
+  }
+
+  .conferenceView video {
+    height: 22vh;
+  }
 }
