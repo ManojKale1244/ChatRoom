@@ -165,44 +165,37 @@
   }
 }
 
+
 /* Mobile Portrait */
-@media screen and (max-width: 600px) {
+
   .chatRoom {
-    width: 100%;
-    height: 45%;
-    bottom: 0;
-    top: auto;
-    border-radius: 20px 20px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45vw;    
+    height: 100vh;   
+    bottom: auto;    
+    border-radius: 0; 
   }
+
   .conferenceView {
-    width: 100%;
-    margin-top: 2vh;
-    height: 52vh;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    width: calc(100% - 45vw);
+    margin-top: 10vh;
+    height: calc(100vh - 20vh);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
+
   .buttonContainers {
-    height: 8vh;
+    height: 10vh;
     gap: 6vw;
   }
+
   .meetUserVideo {
     height: 14vh;
-    bottom: 10vh;
+    bottom: 12vh;
     left: 2vw;
   }
-}
 
-/* Small Phones */
-@media screen and (max-width: 400px) {
-  .meetUserVideo {
-    height: 12vh;
-  }
-  .conferenceView {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-  .screenShareContainer {
-    width: 100%;
-  }
-}
 
 
 /* Lobby Container */
