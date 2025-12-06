@@ -34,7 +34,7 @@ export default function LandingPage() {
 
             <div className="landingMainContainer">
                 <div>
-                    <h1><span style={{ color: "#FF9839" }}>Connect</span>❤️आइए दिल से दिल मिलाते हैं❤️</h1>
+                    <h1><span id="h1">Connect</span>❤️आइए दिल से दिल मिलाते हैं❤️</h1>
 
                     <p className='para'>Let’s share the good moments of life.</p>
                     <div role='button'>
