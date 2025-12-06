@@ -38,7 +38,7 @@ transition: 0.2s;
   display: flex;
   gap: 1.6rem;
   cursor: pointer;
-
+ font-size: 25px;
 }
 
 .landingMainContainer {
@@ -117,9 +117,13 @@ transition: 0.2s;
   color: rgb(0, 255, 68) !important;
 }
 
-.navHeader h2::first-letter{
-color: rgb(223, 25, 91);
-}
+.navHeader{
+   background: linear-gradient(
+    to right,rgb(255, 60, 0),#FF7A00,#FFC7A1
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 40px;
 
 /* .navHeader h2{
   font-size: 2.5rem !important;
@@ -134,18 +138,18 @@ color: rgb(223, 25, 91);
 
 
 .navHeader {
-    padding: 1px 0;    /* ↓ padding कमी केले */
-    margin-top: 0;      /* ↓ top margin हटवले */
+    padding: 1px 0;   
+    margin-top: 0;      
     text-align: center;
 }
 
 .runBorder {
     position: relative;
     display: inline-block;
-    padding:6px 20px; /* ↓ top-bottom padding कमी */
-    margin: 0;         /* margin remove */
+    padding:6px 20px; 
+    margin: 0;         
     color: #fff;
-    font-size: 30px;   /* size थोडा adjust केला */
+    font-size: 30px;   
     border-radius: 12px;
     overflow: hidden;
 }
