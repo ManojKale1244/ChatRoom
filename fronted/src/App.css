@@ -15,6 +15,11 @@
   align-items: center;
 
 }
+.navlist p:hover{
+color: chartreuse;
+transition: 0.2s;
+}
+
 #h1{
   
   background: linear-gradient(
