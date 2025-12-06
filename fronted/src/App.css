@@ -117,7 +117,7 @@ transition: 0.2s;
   color: rgb(0, 255, 68) !important;
 }
 
-.navHeader{
+.navHeader h2{
    background: linear-gradient(
     to right,rgb(255, 60, 0),#FF7A00,#FFC7A1
   );
